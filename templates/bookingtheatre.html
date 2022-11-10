@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Daskino-bookingthtr</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/static/css/index_route.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light flex flex-row justify-between"
+    style="background-color: #4c0033; height: 7vh">
+    <a class="navbar-brand" href="#" style="
+          font-family: 'Times New Roman', Times, serif;
+          color: white;
+          font-size: 40px;
+        ">D A S &nbsp;&nbsp;&nbsp;K I N O</a>
+    <a href="/login" style="
+          font-family: 'Times New Roman', Times, serif;
+          color: white;
+          font-size: 20px;
+        ">Sign Out
+    </a>
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #29071e; height: 7vh">
+    <div class="navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item pr-24">
+          <a class="nav-link" href="/" style="
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+              ">MOVIES</a>
+        </li>
+        <li class="nav-item pr-24">
+          <a class="nav-link" href="/offers" style="
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+              ">OFFERS</a>
+        </li>
+        <li class="nav-item pr-24">
+          <a class="nav-link" href="/about" style="
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+              ">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact" style="
+                font-family: 'Times New Roman', Times, serif;
+                color: white;
+                font-size: 20px;
+              ">CONTACT US</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div style="
+        background-image: url('./bg2.png');
+        height: 86vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+      " class="flex flex-row space-x-24 items-start capitalize">
+    <div class="flex flex-col w-1/3 h-full items-center">
+      <div class="mx-16 mt-10">
+        <img style="max-height: 100%;" src="balckad.png" class="h-96 w-96 rounded-2xl" alt="...">
+      </div>
+      <div class="bg-[#4C0033] h-32 w-96 mx-16 my-4 rounded-2xl text-center">
+        <h3 class="text-white mt-4"> add link to backend here and on random image pls</h3>
+      </div>
+    </div>
+    <div class="flex flex-col w-2/3 h-[27rem] px-24 mt-24 justify-between">
+      <div>
+        <h3 class="bg-[#4C0033] h-10 w-[30rem] rounded-lg text-white px-2">dummy</h3>
+        <h4>theatrename</h4>
+      </div>
+      <div>
+        <!-- <input type="text" class="rounded-lg h-10 w-[30rem]"> -->
+        <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30"
+          min="2018-06-07T00:00" max="2018-06-14T00:00" class="rounded-lg h-10 w-[30rem]">
+
+        <h4>select date</h4>
+      </div>
+      <div>
+        <input type="text" class="rounded-lg h-10 w-[30rem]">
+        <h4>enter ticket quantity</h4>
+      </div>
+      <div>
+        <input type="text" class="rounded-lg h-10 w-[30rem] ">
+        <h4>refreshment name, size</h4>
+      </div>
+      <br>
+      <div class="flex justify-end	w-[30rem]">
+        <a href="/trans"><button class="text-red-500 bg-neutral-500 rounded-lg ">book now</button></a>
+      </div>
+    </div>
+  </div>

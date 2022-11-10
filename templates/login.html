@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/index_route.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+    .background {
+      background-image: url({{ url_for('static', filename='image_1.png') }})
+      }
+  </style>
+
+<body>
+    {% include "includes/_messages.html" %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #4C0033; height: 10vh;">
+        <a class="navbar-brand" href="/"
+            style="font-family:'Times New Roman', Times, serif; color:white; font-size: 40px;">D A S &nbsp;&nbsp;&nbsp;K
+            I N O</a>
+    </nav>
+    <div style="height: 90vh; background-repeat: no-repeat; background-size: cover;"
+        class="flex items-center justify-content-center background">
+        <div class="h-80 w-80 bg-[#4C0033] rounded-2xl flex items-center justify-content-center">
+            <div class="h-full w-full flex flex-col justify-center mb-4 mx-8">
+                <input type="text" class="rounded-lg">
+                <h1 class="text-white capitalize">username</h1><br>
+                <input type="password" class="rounded-lg">
+                <h1 class="text-white capitalize">Password</h1><br><br>
+                <div class="flex flex-row justify-between">
+                    <a href="/forgot" class="text-gray-100">Forgot Password?</a>
+                    <button class="text-fuchsia-50 hover:text-fuchsia-900 capitalize self-end pl-0.5 bg-fuchsia-900 hover:bg-white transition ease-in-out duration-500 px-4 py-1 rounded-2xl">Submit</button>
+                </div>
+                <div class="flex flex-row pt-2 ">
+                    <a href="/register" class="text-red-100">Don't have an account? Click Here</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

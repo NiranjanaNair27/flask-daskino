@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Daskino-aboutus</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/index_route.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<style>
+    .background {
+      background-image: url({{ url_for('static', filename='image_2.jpeg') }})
+      }
+  </style>
+
+<body>
+    {% include "includes/_messages.html" %}
+    <nav class="navbar navbar-expand-lg navbar-light flex flex-row justify-between"
+        style="background-color: #4C0033; height: 7vh;">
+        <a class="navbar-brand" href="#"
+            style="font-family:'Times New Roman', Times, serif; color:white; font-size: 40px;">D A S &nbsp;&nbsp;&nbsp;K
+            I N O</a>
+        <a href="/login" style="font-family:'Times New Roman', Times, serif; color:white; font-size: 20px;">Sign Out
+        </a>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #29071E; height: 7vh;">
+        <div class="navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item pr-24">
+                    <a class="nav-link" href="/"
+                        style="font-family:'Times New Roman', Times, serif; color:white; font-size: 20px;">MOVIES</a>
+                </li>
+                <li class="nav-item pr-24">
+                    <a class="nav-link" href="/offers"
+                        style="font-family:'Times New Roman', Times, serif; color:white; font-size: 20px;">OFFERS</a>
+                </li>
+                <li class="nav-item pr-24">
+                    <a class="nav-link" href="/about"
+                        style="font-family:'Times New Roman', Times, serif; color:white; font-size: 20px;">ABOUT US</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact"
+                        style="font-family:'Times New Roman', Times, serif; color:white; font-size: 20px;">CONTACT
+                        US</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2" type="submit"
+                    style="background-color: white; color: #4C0033;">Search</button>
+            </form>
+        </div>
+    </nav>
+    <div style="height: 86vh; background-repeat: no-repeat; background-size: cover;"
+        class="flex flex-row space-y-24 space-x-24 background">
+        <div class="mx-12 my-24 text-lg font-medium">
+            we are a small group of people trying to provide the best service to everyone. Lorem, ipsum dolor sit amet
+            consectetur adipisicing elit. Architecto, totam fuga ratione provident nobis a illo. Doloribus ipsa illum
+            est nulla repellat, veniam debitis! Aut, doloribus eveniet reprehenderit facere quia doloremque esse. Vero
+            aperiam, ea, consectetur quaerat nisi officiis eaque ab omnis asperiores rerum velit.
+        </div>
+    </div>
