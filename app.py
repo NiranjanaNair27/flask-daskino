@@ -7,10 +7,10 @@ import random
 app = Flask(__name__)
 
 app.debug = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:niru123@localhost/daskino'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tarun123@localhost/daskino'
 db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = 'awwfaw'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # routes
 @app.route('/')
@@ -94,7 +94,7 @@ def username_predict(u, t):
             c = False
     return s
 
-@app.route("/register", methods = ['GET', 'POST'])
+@app.route("/login", methods = ['GET', 'POST'])
 def registerhospital():
     if request.method == 'POST':
         namecust = request.form['namecust']
@@ -120,7 +120,7 @@ def registerhospital():
 #     password=db.CharField(max_length=20)
 #     salary=db.IntegerField()
 
-class UserDet(db.Model):  # type: ignore
+class UserDet(db.Model):
     __tablename__ = 'userdetails'
     userid = db.Column(db.Integer, primary_key = True)
     namecust = db.Column(db.String(200))
@@ -150,24 +150,24 @@ class movies(db.Model):
         self.rating=rating
         self.poster=poster
 
-class theatres(db.Model):
-    __tablename__='theatres'
-    theatreid=db.Column(db.Integer, primary_key= True)
-    theatrename=db.Column(db.String(200))
-    morning_show=db.Column(db.String(200), db.ForeignKey('movies.mname'))
-    movies= db.relationship('movies',backref= backref("movies",  uselist=False))
-    evening_show=db.Column(db.String(200))
+# class theatres(db.Model):
+#     __tablename__='theatres'
+#     theatreid=db.Column(db.Integer, primary_key= True)
+#     theatrename=db.Column(db.String(200))
+#     morning_show=db.Column(db.String(200), db.ForeignKey('movies.mname'))
+#     movies= db.relationship('movies',backref= backref("movies",  uselist=False))
+#     evening_show=db.Column(db.String(200))
 
-    def __init__(self, theatrename, morning_show, movies, evening_show):
-        self.theatrename = theatrename
-        self.morning_show = morning_show
-        self.movies = movies
-        self.evening_show = evening_show
+    # def __init__(self, theatrename, morning_show, movies, evening_show):
+    #     self.theatrename = theatrename
+    #     self.morning_show = morning_show
+    #     self.movies = movies
+    #     self.evening_show = evening_show
 
 class tickets(db.Model):
     __tablename__='tickets'
     ticketid=db.Column(db.Integer, primary_key= True)
-    no_of_tckts=db.Column(db.integer)
+    no_of_tckts=db.Column(db.Integer)
     username=db.Column(db.String(200))
     movname=db.Column(db.String(200))
     theatr=db.Column(db.String(200))
