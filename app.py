@@ -7,10 +7,9 @@ import random
 app = Flask(__name__)
 
 app.debug = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tarun123@localhost/daskino'
 db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:tarun123@localhost/daskino'
 app.config['SECRET_KEY'] = 'awwfaw'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # routes
 @app.route('/')
@@ -19,10 +18,6 @@ def login():
 
 @app.route('/home')
 def index():
-    return render_template('homepage.html')
-
-@app.route('/register')
-def register():
     return render_template('homepage.html')
 
 @app.route('/about')
@@ -94,22 +89,22 @@ def username_predict(u, t):
             c = False
     return s
 
-@app.route("/login", methods = ['GET', 'POST'])
-def registerhospital():
+@app.route("/register", methods = ['GET', 'POST'])
+def register():
     if request.method == 'POST':
         namecust = request.form['namecust']
         username = request.form['username']
-        password = sa.hash(request.form['password'])
+        password = request.form['password']
         phonenum = request.form['phonenum']
         if db.session.query(UserDet).filter(UserDet.username == username).count() == 0:
             data = UserDet(namecust, username, password, phonenum)
             db.session.add(data)
             db.session.commit()
             flash('you are now registered', 'success')
-            return redirect(url_for('loginhospital'))
+            return redirect(url_for('login'))
         else:
             flash("Username already exists" + username_predict(username, UserDet), 'danger')
-    return render_template('remnmg.html')
+    return render_template('register.html')
 
 # models
 
