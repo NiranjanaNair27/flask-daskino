@@ -125,40 +125,60 @@ class UserDet(db.Model):  # type: ignore
     userid = db.Column(db.Integer, primary_key = True)
     namecust = db.Column(db.String(200))
     username = db.Column(db.String(200), unique=True)
-    password = db.Column(db.String(300))
-    phonenum = db.Column(db.String(10))
+    passwd = db.Column(db.String(300))
+    phnum = db.Column(db.String(10))
 
 
-    def __init__(self, namecust, username, password, phonenum):
+    def __init__(self, namecust, username, passwd, phnum):
         self.namecust = namecust
         self.username = username
-        self.password = password
-        self.phonenum = phonenum 
+        self.passwd = passwd
+        self.phnum = phnum 
 
 
-# class movies(db.Model):
-#     __tablename__='movies'
-#     moviename = db.Column(db.String(200), primary_key=True)
-#     description= db.column(db.text())
-#     genre= db.column(db.string(20))
-#     rating=db.column(db.string(5))
+class movies(db.Model):
+    __tablename__='movies'
+    mname = db.Column(db.String(200), primary_key=True)
+    desc= db.Column(db.Text())
+    genre= db.Column(db.String(20))
+    rating=db.Column(db.String(5))
+    poster=db.Column(db.Text())
 
-#     def __init__(self, description, genre, rating):
-#         self.description=description
-#         self.genre=genre
-#         self.rating=rating
+    def __init__(self, desc, genre, rating,poster):
+        self.desc=desc
+        self.genre=genre
+        self.rating=rating
+        self.poster=poster
 
-# class theatres(db.Model):
-#     __tablename__='theatres'
-#     theatreid=db.column(db.Integer, primary_key= True)
-#     theatrename=db.Column(db.String(200))
-#     morning_show=db.column(db.String(200), db.ForeignKey('movies.moviename'))
-#     movies= db.relationship('movies',backref=backref("movies",  uselist=False))
-#     evening_show=db.column(db.string(200))
+class theatres(db.Model):
+    __tablename__='theatres'
+    theatreid=db.Column(db.Integer, primary_key= True)
+    theatrename=db.Column(db.String(200))
+    morning_show=db.Column(db.String(200), db.ForeignKey('movies.mname'))
+    movies= db.relationship('movies',backref= backref("movies",  uselist=False))
+    evening_show=db.Column(db.String(200))
 
-# class tickets(db.Model):
-#     __tablename__='tickets'
-#     ticketid=db.column(db.Integer, primary_key= True)
+    def __init__(self, theatrename, morning_show, movies, evening_show):
+        self.theatrename = theatrename
+        self.morning_show = morning_show
+        self.movies = movies
+        self.evening_show = evening_show
+
+class tickets(db.Model):
+    __tablename__='tickets'
+    ticketid=db.Column(db.Integer, primary_key= True)
+    no_of_tckts=db.Column(db.integer)
+    username=db.Column(db.String(200))
+    movname=db.Column(db.String(200))
+    theatr=db.Column(db.String(200))
     
+    def __init__(self, ticketid, no_of_tckts, username, mov_name, theatr):
+        self.ticketid=ticketid
+        self.no_of_tckts=no_of_tckts
+        self.username=username
+        self.mov_name=mov_name
+        self.theatr=theatr
+
+
 if __name__ == '__main__':
     app.run()
